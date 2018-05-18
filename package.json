@@ -1,5 +1,5 @@
 {
-  "name": "pisig",
+  "name": "pisig ",
   "version": "0.0.1",
   "description": "Pi Sigma Investment Fund",
   "main": "main.js",
@@ -8,12 +8,13 @@
     "start": "node main"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
     "bcryptjs": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
     "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongodb": "^3.1.0-beta4",
+    "mongoose": "*",
     "passport": "*",
     "passport-jwt": "*"
   },
@@ -22,5 +23,5 @@
     "url": "https://github.com/manitty/pisig.git"
   },
   "author": "Paul Minniti",
-  "license": "pisig"
+  "license": "SPDX"
 }
