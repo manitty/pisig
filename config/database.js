@@ -10,7 +10,7 @@ MongoClient.connect(uri, function(err, client) {
 */
 
 module.exports = {
-  //database: 'mongodb+srv://dsyncadmin:doyouknowthemuffinman@cluster0-5clo4.mongodb.net/test?retryWrites=true',
-  database: 'mongodb://localhost:27017/pisig',
+  database: 'mongodb+srv://dsyncadmin:doyouknowthemuffinman@cluster0-5clo4.mongodb.net/test?retryWrites=true',
+  //database: 'mongodb://localhost:27017/pisig',
   secret: 'tempSec'
 }

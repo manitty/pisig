@@ -15,7 +15,7 @@ router.post('/register', (req, res, next) => {
   });
 
 
-  User.addUserPassword(newUser.password, (err, user) =>{
+  User.addUserPassword( req.body.password, (err, user) =>{
       if(err){
         res.json({success: false, msg: 'password failed to register'});
       } else {
@@ -24,7 +24,7 @@ router.post('/register', (req, res, next) => {
   });
 
 
- 
+
 /*
   User.addUsername(newUser, (err, user) =>{
       if(err){
