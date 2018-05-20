@@ -4,9 +4,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
 
-
-
-
+const User = require('../models/users');
 
 router.post('/register', (req, res, next) => {
   let newUser = new User({
@@ -16,15 +14,28 @@ router.post('/register', (req, res, next) => {
     password: req.body.password
   });
 
-  User.addUser(newUser, (err, user) =>{
+
+  User.addUserPassword(newUser.password, (err, user) =>{
       if(err){
-        res.json({success: false, msg: 'failed to register'});
+        res.json({success: false, msg: 'password failed to register'});
       } else {
-        res.json({success: true, msg: 'Registration Success'})
+        res.json({success: true, msg: 'password Registration Success'})
       }
-
-
   });
+
+
+ 
+/*
+  User.addUsername(newUser, (err, user) =>{
+      if(err){
+        res.json({success: false, msg: 'Username failed to register'});
+      } else {
+        res.json({success: true, msg: 'Username Registration Success'})
+      }
+  });
+*/
+
+
 });
 
 router.post('/authenticate', (req, res, next) => {
@@ -38,9 +49,6 @@ router.get('/profile', (req, res, next) => {
 router.get('/validate', (req, res, next) => {
   res.send('VALIDATE')
 });
-
-
-
 
 
 module.exports = router;
